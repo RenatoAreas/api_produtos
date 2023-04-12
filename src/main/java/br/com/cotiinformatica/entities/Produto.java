@@ -10,11 +10,15 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
 @Table
+@NoArgsConstructor
+@AllArgsConstructor
 public class Produto {
 	
 	@Id
@@ -32,7 +36,7 @@ public class Produto {
 	private BigDecimal preco;
 	
 	@Column(nullable = false)
-	private Double quantidade;
+	private Integer quantidade;
 	
 	@ManyToOne
 	@JoinColumn(name = "idcategoria", nullable = false)
